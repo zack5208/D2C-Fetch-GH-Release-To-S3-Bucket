@@ -42,12 +42,21 @@ Defaults is point to the latest release version zip file.
 ## Example usage
 
 ```yaml
-uses: zack5208/testAction@master
+uses: Upload release zip file to S3 bucket 
 with:
-  src_repo: "zack5208/testAction" # Optional  Default: this calling repo
   token: ${{ secrets.GITHUB_TOKEN }} # Required
-  aws_access_key_id: ${{ secrets.aws_access_key_id}} # Required
-  aws_secret_access_key: ${{ secrets.aws_secret_access_key} # Required
+  aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}} # Required
+  aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY} # Required
+  s3_bucket: "bucket_name" # Required
+```
+
+```yaml
+uses: Upload release zip file to S3 bucket 
+with:
+  src_repo: "zack5208/D2C-Fetch-GH-Release-To-S3-Bucket" # Optional  Default: this calling repo
+  token: ${{ secrets.GITHUB_TOKEN }} # Required
+  aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID}} # Required
+  aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY} # Required
   s3_bucket: "bucket_name" # Required
   s3_bucket_folder: "bucket_folder_name" #Optional 
   version:  "v1" # Optional  Default: the lastest version
