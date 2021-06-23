@@ -60,7 +60,6 @@ try:
     if repo == "":
         repo = default_repo
     print("default_repo:" +default_repo)
-    #print("repo type:"+ type(repo))
     print ("Download from this repo: "+ repo)
 
     url_get_release_latest_tag = "https://api.github.com/repos/" + repo + "/releases/latest"
