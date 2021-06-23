@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import requests
 import json
 import os
@@ -18,9 +17,6 @@ ACCESS_KEY = os.getenv('INPUT_AWS_ACCESS_KEY_ID', None)
 SECRET_KEY =  os.getenv('INPUT_AWS_SECRET_ACCESS_KEY', None)
 s3_bucket = os.getenv('INPUT_S3_BUCKET', None)
 s3_bucket_folder =  os.getenv('INPUT_S3_BUCKET_FOLDER', None)
-
-
-
 
 print(os.environ)
 ##################################################
@@ -55,7 +51,6 @@ def upload_file(file_name, bucket,ACCESS_KEY ,SECRET_KEY, object_name=None,):
     except ClientError as e:
         logging.error(e)
         raise ClientError
-#        return False
     return True            
 
 ##################################################
@@ -95,7 +90,6 @@ try:
     print("Download file to this path in docker container: "+ dst_download_file_path )
     download_url( src_download_file_path , dst_download_file_path )
 
-
     # check file exists in the docker container
     print ("Check file exist in docker container...")
     if os.path.exists(dst_download_file_path):
@@ -118,6 +112,3 @@ try:
 except:
     print("Unable to upload the file to S3 bucket. ")
     raise Exception
-
-
-
