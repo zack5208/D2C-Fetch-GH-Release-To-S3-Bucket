@@ -71,7 +71,7 @@ try:
     url_get_release_latest_tag = "https://api.github.com/repos/" + repo + "/releases/latest"
 
     # Get version
-    if version == None:
+    if version == "":
         print("Get version from this url :"+ url_get_release_latest_tag)
         r = requests.get( url_get_release_latest_tag , headers = { 'Authorization' : 'token ' + token })
         print("status code: "+ str(r.status_code))
