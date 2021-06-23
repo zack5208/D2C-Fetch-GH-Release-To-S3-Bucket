@@ -19,6 +19,9 @@ inputs:
   s3_bucket_folder:
     description: 's3_bucket_folder'
     required: true
+  version:
+    description: 'version'
+    required: false    
     
 runs:
   using: 'docker'
