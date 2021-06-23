@@ -62,7 +62,7 @@ def upload_file(file_name, bucket,ACCESS_KEY ,SECRET_KEY, object_name=None,):
 #Script start here
 ##################################################
 try:
-    if repo == None:
+    if repo == "":
         repo = default_repo
     print("default_repo:" +default_repo)
     #print("repo type:"+ type(repo))
