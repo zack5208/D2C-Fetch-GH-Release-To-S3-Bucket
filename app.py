@@ -96,7 +96,7 @@ try:
         print( "File size (bytes): " + str(os.path.getsize(dst_download_file_path)))
         # Upload zip file to S3
         repo_name_arr = repo.split("/")
-        if s3_bucket_folder == None:
+        if s3_bucket_folder == "":
             file_object_name = repo_name_arr[1] + "/" + download_file_name
         else:
             file_object_name = s3_bucket_folder + "/" + repo_name_arr[1] + "/" + download_file_name    
