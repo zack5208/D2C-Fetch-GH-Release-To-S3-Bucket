@@ -99,7 +99,7 @@ try:
         if s3_bucket_folder == "":
             file_object_name = repo_name_arr[1] + "/" + download_file_name
         else:
-            file_object_name = s3_bucket_folder + "/" + repo_name_arr[1] + "/" + download_file_name    
+            file_object_name = s3_bucket_folder + "/" + repo_name_arr[1] + "/" + repo_name_arr[1] + "-" + download_file_name    
         print("file_object_name: "+  file_object_name )  
         print("Upload to s3_bucket: "+ s3_bucket)
         if upload_file(dst_download_file_path,s3_bucket,ACCESS_KEY,SECRET_KEY,file_object_name):
